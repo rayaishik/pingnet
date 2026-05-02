@@ -1,0 +1,101 @@
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-lg);
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(108, 92, 231, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 206, 201, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(108, 92, 231, 0.04) 0%, transparent 50%);
+  animation: fadeIn 1s ease;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-2xl);
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(108, 92, 231, 0.05);
+  position: relative;
+  z-index: 1;
+  animation: scaleIn 0.4s ease;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.auth-logo {
+  font-size: var(--font-3xl);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-400), var(--accent-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-xs);
+}
+
+.auth-subtitle {
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+}
+
+.auth-footer a {
+  color: var(--primary-400);
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.auth-error {
+  background: rgba(225, 112, 85, 0.1);
+  border: 1px solid rgba(225, 112, 85, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--danger);
+  font-size: var(--font-sm);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: var(--space-lg);
+    margin: var(--space-md);
+  }
+  .auth-logo {
+    font-size: var(--font-2xl);
+  }
+}
